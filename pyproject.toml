@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fx-settlement-ledger"
+version = "0.1.0a1"
+description = "FR: Séparer change et arrondi dans un règlement multidevise déclaré | EN: Separate exchange effects and rounding in declared FX settlement | ES: Separar cambio y redondeo en una liquidación multidivisa declarada"
+requires-python = ">=3.11"
+license = "MIT"
+
+[project.scripts]
+fx-settlement-ledger = "fx_settlement_ledger.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["fx_settlement_ledger*"]

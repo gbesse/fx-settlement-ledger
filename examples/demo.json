@@ -1,0 +1,10 @@
+{
+  "foreign_currency": "USD",
+  "base_currency": "EUR",
+  "invoice_foreign": "100",
+  "settled_foreign": "100",
+  "invoice_rate": "1.1",
+  "settlement_rate": "1.2",
+  "quote_direction": "base_per_foreign",
+  "fee_base": "2"
+}

@@ -1,0 +1,1 @@
+DESCRIPTION = {'fr': 'Séparer change et arrondi dans un règlement multidevise déclaré', 'en': 'Separate exchange effects and rounding in declared FX settlement', 'es': 'Separar cambio y redondeo en una liquidación multidivisa declarada'}
