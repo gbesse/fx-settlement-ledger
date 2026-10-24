@@ -1,11 +1,12 @@
-from decimal import Decimal,localcontext,ROUND_HALF_EVEN
+from decimal import Decimal,localcontext,InvalidOperation,ROUND_HALF_EVEN
 import re
 from .common import integer
 
 def D(x):
  if isinstance(x,bool)or not isinstance(x,(str,int,float))or len(str(x))>50:raise ValueError('decimal')
- value=Decimal(str(x))
- if not value.is_finite()or abs(value)>Decimal('1e12')or value.as_tuple().exponent< -20:raise ValueError('decimal')
+ try:value=Decimal(str(x))
+ except InvalidOperation:raise ValueError('decimal')from None
+ if not value.is_finite()or value.adjusted()>12 or value.as_tuple().exponent< -20 or abs(value)>Decimal('1e12'):raise ValueError('decimal')
  return value
 def run(data):
  for k in ('foreign_currency','base_currency'):
